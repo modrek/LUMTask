@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LUMTask.Domain.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +25,18 @@ namespace LUMTask
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Inject Document Store and Material Repository          
+            services.AddSingleton<IDocumentStoreHolder, DocumentStoreHolder>();
+
+            // Allow All region in CORS
+            services.AddCors(o => o.AddPolicy("AllowOrigin", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
+
             services.AddControllers();
         }
 
@@ -34,6 +47,14 @@ namespace LUMTask
             {
                 app.UseDeveloperExceptionPage();
             }
+
+
+            // global cors policy
+            app.UseCors(x => x
+                //.AllowAnyOrigin()
+                //.AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
 
             app.UseRouting();
 
