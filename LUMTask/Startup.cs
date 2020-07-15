@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using FluentValidation.AspNetCore;
 using LUMTask.Domain.Model;
 using LUMTask.Domain.Repositories;
+using LUMTask.Helpers;
 using LUMTask.ModdleService;
 using LUMTask.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -35,13 +37,19 @@ namespace LUMTask
         public void ConfigureServices(IServiceCollection services)
         {
 
-            // inject logger service
+            // inject logger service and User Service
             services.AddSingleton<ILoggerManager, LoggerManager>();
-
+            services.AddScoped<IUserService, UserService>();
 
             // Inject Document Store and Material Repository          
             services.AddSingleton<IDocumentStoreHolder, DocumentStoreHolder>();
             services.AddScoped<IMaterialRepository, MaterialRepository>();
+
+
+            // configure basic authentication 
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
 
 
             // Allow All region in CORS

@@ -7,6 +7,7 @@ using LUMTask.Domain.Model;
 using LUMTask.Domain.Repositories;
 using LUMTask.Helpers;
 using LUMTask.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -20,6 +21,8 @@ namespace LUMTask.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1")]
     [ApiController]
+    //[Authorize]
+    //[EnableCors("AllowOrigin")]
     public class MaterialsController : ControllerBase
     {
         private readonly IMaterialRepository _materialRepository;
