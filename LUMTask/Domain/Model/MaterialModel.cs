@@ -14,8 +14,8 @@ namespace LUMTask.Domain.Model
         //[Required(ErrorMessageResourceName = "PropertyValueRequired"), StringLength(100, ErrorMessageResourceName = "PropertyValueLength")]
         public string MaterialName { get; set; }
 
-        //[Display(Name = "Author")]
-        //[Required(ErrorMessageResourceName = "PropertyValueRequired"), StringLength(200, ErrorMessageResourceName = "PropertyValueLength")]
+        [Display(Name = "Author")]
+        [Required(ErrorMessageResourceName = "PropertyValueRequired"), StringLength(200, ErrorMessageResourceName = "PropertyValueLength")]
         public string Author { get; set; }
 
         //[Display(Name = "Material visible")]

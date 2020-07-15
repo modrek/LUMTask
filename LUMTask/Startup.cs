@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LUMTask.Domain.Model;
+using LUMTask.Domain.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,8 @@ namespace LUMTask
         {
             // Inject Document Store and Material Repository          
             services.AddSingleton<IDocumentStoreHolder, DocumentStoreHolder>();
+            services.AddScoped<IMaterialRepository, MaterialRepository>();
+
 
             // Allow All region in CORS
             services.AddCors(o => o.AddPolicy("AllowOrigin", builder =>

@@ -14,6 +14,10 @@ namespace LUMTask.Domain.Model
     {
         IDocumentSession GetSession();
     }
+
+    /// <summary>
+    /// signlton pattern for 
+    /// </summary>
     public class DocumentStoreHolder: IDocumentStoreHolder
     {
 
@@ -34,6 +38,7 @@ namespace LUMTask.Domain.Model
 
         public DocumentStoreHolder(IConfiguration configuration)
         {
+            #region Validate Configuration
             _configuration = configuration;
             var RavenServerURL = _configuration.GetSection("RavenDB").GetValue<string>("URL");
             if (string.IsNullOrWhiteSpace(RavenServerURL))
@@ -47,6 +52,7 @@ namespace LUMTask.Domain.Model
                 throw new ArgumentException("Configuration must contain DataBaseName");
             }
 
+            #endregion
 
             Consts.URL = RavenServerURL;
             Consts.DataBaseName = DataBaseName;

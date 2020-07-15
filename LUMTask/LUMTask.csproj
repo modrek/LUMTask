@@ -10,5 +10,9 @@
     <PackageReference Include="RavenDB.Client" Version="4.2.103" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Domain\Repositories\" />
+  </ItemGroup>
+
 
 </Project>

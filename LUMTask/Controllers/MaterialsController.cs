@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using LUMTask.Domain.Model;
+using LUMTask.Domain.Repositories;
 using LUMTask.Helpers;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -19,43 +20,40 @@ namespace LUMTask.Controllers
     [ApiController]
     public class MaterialsController : ControllerBase
     {
-        private readonly IDocumentStoreHolder _documentStoreHolder;
+        private readonly IMaterialRepository _materialRepository;
 
-        public MaterialsController(IDocumentStoreHolder documentStoreHolder)
+        public MaterialsController(IMaterialRepository materialRepository)
         {
-            _documentStoreHolder = documentStoreHolder;
+            _materialRepository = materialRepository;
         }
 
         [HttpGet("{id}")]
         public MaterialModel GetById(string id)
         {
-            var session = _documentStoreHolder.GetSession();
-            var entity = session.Load<MaterialModel>($"MaterialModels/{id}");
-            if (entity == null)
-                throw new Exception("Material Not Found");
-            return entity;
+            return _materialRepository.Get($"MaterialModels/{id}");
         }
 
         [HttpGet()]
         public MaterialModel GetByName(string name)
         {
-            var session = _documentStoreHolder.GetSession();
-            name = $"*{name}*";
-            return session.Query<MaterialModel>().Search(x => x.MaterialName, name).FirstOrDefault();
+            return _materialRepository.GetByName(name);
         }
 
         // POST api/<MaterialController>
         [HttpPost]
         public IActionResult Post([FromBody] MaterialModel model)
         {
+            if (!ModelState.IsValid)           // Invokes the build-in
+                return BadRequest(ModelState); //
+
             Validate(model);
 
             if (!ModelState.IsValid)
                 return Ok(String.Join("\n", ModelState.Values.Where(x => x.ValidationState == ModelValidationState.Invalid).Select(x => x.Errors[0].ErrorMessage).ToList()));
 
-            var session = _documentStoreHolder.GetSession();
-            session.Store(model);
-            session.SaveChanges();
+            _materialRepository.Add(model);
+            _materialRepository.Complete();
+
             return Ok("Material added successfully.");
         }
 
@@ -63,32 +61,29 @@ namespace LUMTask.Controllers
 
         // PUT api/<MaterialController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(string Id, [FromBody] MaterialModel model)
+        public IActionResult Put(string id, [FromBody] MaterialModel model)
         {
             Validate(model);
 
             if (!ModelState.IsValid)
                 return Ok(String.Join("\n", ModelState.Values.Where(x => x.ValidationState == ModelValidationState.Invalid).Select(x => x.Errors[0].ErrorMessage).ToList()));
 
-            var session = _documentStoreHolder.GetSession();
-            var newmodel = session.Load<MaterialModel>($"MaterialModels/{Id}");
 
-            GeneralMethods.CopyAllClassProp(model, newmodel);
-            session.SaveChanges();
+            _materialRepository.Update($"MaterialModels/{id}", model);
+            _materialRepository.Complete();
 
-            return Ok("Material updated successfully.");
+            return Ok("Materia updated successfully.");
         }
 
         // DELETE api/<MaterialController>/5
         [HttpDelete("{id}")]
         public void Delete(string id)
         {
-            var session = _documentStoreHolder.GetSession();
-            var entity = session.Load<MaterialModel>($"MaterialModels/{id}");
+            var entity = _materialRepository.Get($"MaterialModels/{id}");
             if (entity == null)
                 throw new Exception("Material Not Found");
-            session.Delete(entity);
-            session.SaveChanges();
+            _materialRepository.Remove(entity);
+            _materialRepository.Complete();
         }
 
         private void Validate(MaterialModel model)
@@ -117,7 +112,7 @@ namespace LUMTask.Controllers
         }
         public static bool Between(float number)
         {
-            return number >= (Consts.MinValue - (Consts.MinValue * Consts.Telorance)) && number <= (Consts.MaxValue + (Consts.MinValue * Consts.Telorance));
+            return number >= (Consts.MinValue - Consts.Step) && number <= (Consts.MaxValue +  Consts.Step);
         }
     }
       
