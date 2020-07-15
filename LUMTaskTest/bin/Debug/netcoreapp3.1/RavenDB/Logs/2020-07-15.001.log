@@ -1,0 +1,7 @@
+Time, Thread, Level, Source, Logger, Message, Exception
+2020-07-15T20:00:44.5511603Z, 1, Operations, Server, Raven.Server.Program,  Build 42046, Version 4.2, SemVer 4.2.103, Commit f678660
+ PID 16568, 64 bits, 4 Cores, Arch: X64
+ 15.952 GBytes Physical Memory, 6.856 GBytes Available Memory, 6.887 GBytes Calculated Available Memory, 0 Bytes Scratch Dirty Memory
+ Using GC in server concurrent mode retaining memory from the OS.
+librvnpal Expected Version: 42013, librvnpal Current Version: 42013
+2020-07-15T20:00:51.8031378Z, 2, Operations, Server, Raven.Server.Program, Server is about to shut down (interactive mode)
