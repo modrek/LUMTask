@@ -25,6 +25,7 @@
       "LUMTask/1.0.0": {
         "dependencies": {
           "FluentValidation.AspNetCore": "9.0.1",
+          "Microsoft.AspNetCore.Mvc.Versioning": "4.1.1",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.9",
           "RavenDB.Client": "4.2.103",
           "Swashbuckle.AspNetCore.Swagger": "5.5.1",
@@ -372,6 +373,17 @@
         },
         "compile": {
           "lib/netstandard1.0/Lambda2Js.Signed.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/4.1.1": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.7301.35616"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
         }
       },
       "Microsoft.CSharp/4.7.0": {},
@@ -2836,6 +2848,13 @@
       "sha512": "sha512-il7KgdZ5f5+zUftegjGIk0mpcJCDUavNXPPmjgJyAN57aJesKEj1yL0X+iwIoOBdjN49kutsM9EyaZu0+t+34w==",
       "path": "lambda2js.signed/3.1.3",
       "hashPath": "lambda2js.signed.3.1.3.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/4.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ioFhRz5gm2Ny+t758Jab638eTG8Uui++klcH00EgBuU/BQbjkbFY+9xw/CkoAChIcrJsoQP2NKDYJ09zN5jR0g==",
+      "path": "microsoft.aspnetcore.mvc.versioning/4.1.1",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.4.1.1.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",

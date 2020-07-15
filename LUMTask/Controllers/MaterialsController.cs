@@ -16,7 +16,8 @@ using Raven.Client.Documents;
 
 namespace LUMTask.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1")]
     [ApiController]
     public class MaterialsController : ControllerBase
     {

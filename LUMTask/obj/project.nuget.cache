@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cTJfGbS3FEGi8CJEp1a95UxNWELGimjdvvMzKe4LeuFj5MsN2ZtQXdqR1gdnqd8PhAaOQSFVQfgJhEe/V/jplw==",
+  "dgSpecHash": "f6enVkzfY4sPpceCnBUnt0/HFd7Yhjjv532rev1qdyOOpwOye7pBFrxykJTBq5KATWIAxDC/oI9yiVicnl6AHw==",
   "success": true,
   "projectFilePath": "D:\\Projects\\Tasks\\LUMTask\\LUMTask\\LUMTask.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Mohammad\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.0.1\\fluentvalidation.aspnetcore.9.0.1.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.0.1\\fluentvalidation.dependencyinjectionextensions.9.0.1.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\lambda2js.signed\\3.1.3\\lambda2js.signed.3.1.3.nupkg.sha512",
+    "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\4.1.1\\microsoft.aspnetcore.mvc.versioning.4.1.1.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

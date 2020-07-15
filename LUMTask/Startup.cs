@@ -55,6 +55,9 @@ namespace LUMTask
             }).AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Startup>()); ;
 
 
+            // for API Versining
+            services.AddApiVersioning();
+
             services.AddControllers();
         }
 
