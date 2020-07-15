@@ -22,6 +22,7 @@ D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Raven.Client.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Sparrow.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.csproj.CopyComplete
+<<<<<<< Updated upstream
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\FluentValidation.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
@@ -30,6 +31,10 @@ D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Versioning.dll
+=======
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\nlog.config
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\NLog.dll
+>>>>>>> Stashed changes
 D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.csproj.CoreCompileInputs.cache
 D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.MvcApplicationPartsAssemblyInfo.cache

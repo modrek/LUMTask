@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using LUMTask.Domain.Model;
 using LUMTask.Domain.Repositories;
 using LUMTask.Helpers;
+using LUMTask.Services;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
