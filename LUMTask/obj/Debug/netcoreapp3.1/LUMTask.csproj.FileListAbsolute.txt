@@ -25,6 +25,10 @@ D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.csproj.CopyCom
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\FluentValidation.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.csproj.CoreCompileInputs.cache
 D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.MvcApplicationPartsAssemblyInfo.cache

@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace LUMTask
 {
@@ -41,6 +42,12 @@ namespace LUMTask
                        .AllowAnyHeader();
             }));
 
+            // add swagger for API documentation
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "LUM Task", Version = "v1" });
+            });
+
             // add middle service Fluent validator for validation models
             services.AddMvc(opt =>
             {
@@ -59,6 +66,12 @@ namespace LUMTask
                 app.UseDeveloperExceptionPage();
             }
 
+            // API Development Documnets
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "LUM Task V1");
+            });
 
             // global cors policy
             app.UseCors(x => x
