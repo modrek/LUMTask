@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YvI1dNnJzx7lC/uRsYjMSTJNK0YK0Nu1IXCmyPYlr0AJLM0hbyaIju9sOI6QrYs5Ga9gtxuu71uPfi6x8L/KSA==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\Tasks\\LUMTask\\LUMTask\\LUMTask.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,10 @@
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\LUMTask.exe
+D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.csprojAssemblyReference.cache
+D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.AssemblyInfoInputs.cache
+D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.AssemblyInfo.cs
+D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.RazorTargetAssemblyInfo.cache
+D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\staticwebassets\LUMTask.StaticWebAssets.Manifest.cache
+D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\staticwebassets\LUMTask.StaticWebAssets.xml
