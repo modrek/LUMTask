@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
 using LUMTask.Domain.Model;
 using LUMTask.Domain.Repositories;
+using LUMTask.ModdleService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -38,6 +40,12 @@ namespace LUMTask
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
+
+            // add middle service Fluent validator for validation models
+            services.AddMvc(opt =>
+            {
+                opt.Filters.Add(typeof(ValidatorActionFilter));
+            }).AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Startup>()); ;
 
 
             services.AddControllers();

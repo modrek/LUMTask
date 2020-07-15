@@ -21,6 +21,10 @@ D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Raven.Client.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\Sparrow.dll
 D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
-D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.csproj.CoreCompileInputs.cache
-D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.MvcApplicationPartsAssemblyInfo.cache
 D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.csproj.CopyComplete
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\FluentValidation.dll
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+D:\Projects\Tasks\LUMTask\LUMTask\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.csproj.CoreCompileInputs.cache
+D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\Tasks\LUMTask\LUMTask\obj\Debug\netcoreapp3.1\LUMTask.MvcApplicationPartsAssemblyInfo.cache
