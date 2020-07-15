@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using LUMTask.Domain.Model;
+using LUMTask.Helpers;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -16,11 +17,11 @@ namespace LUMTask.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MaterialController : ControllerBase
+    public class MaterialsController : ControllerBase
     {
         private readonly IDocumentStoreHolder _documentStoreHolder;
 
-        public MaterialController(IDocumentStoreHolder documentStoreHolder)
+        public MaterialsController(IDocumentStoreHolder documentStoreHolder)
         {
             _documentStoreHolder = documentStoreHolder;
         }
@@ -62,16 +63,18 @@ namespace LUMTask.Controllers
 
         // PUT api/<MaterialController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(string id, [FromBody] MaterialModel model)
+        public IActionResult Put(string Id, [FromBody] MaterialModel model)
         {
             Validate(model);
 
             if (!ModelState.IsValid)
                 return Ok(String.Join("\n", ModelState.Values.Where(x => x.ValidationState == ModelValidationState.Invalid).Select(x => x.Errors[0].ErrorMessage).ToList()));
 
-            //var session = _documentStoreHolder.GetSession();
-            //session.Store(model);
-            //session.SaveChanges();
+            var session = _documentStoreHolder.GetSession();
+            var newmodel = session.Load<MaterialModel>($"MaterialModels/{Id}");
+
+            GeneralMethods.CopyAllClassProp(model, newmodel);
+            session.SaveChanges();
 
             return Ok("Material updated successfully.");
         }
