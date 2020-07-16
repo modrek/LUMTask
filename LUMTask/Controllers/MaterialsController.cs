@@ -32,19 +32,34 @@ namespace LUMTask.Controllers
             _materialRepository = materialRepository;
         }
 
+        /// <summary>
+        /// Get Material Info By ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public MaterialModel GetById(string id)
         {
             return _materialRepository.Get(id);
         }
 
+
+        /// <summary>
+        /// Get Material By Name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpGet()]
         public IEnumerable< MaterialModel> GetByName(string name)
         {
             return _materialRepository.GetByName(name);
         }
 
-        // POST api/<MaterialController>
+        /// <summary>
+        /// Create new Material
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post([FromBody] MaterialModel model)
         {
@@ -56,7 +71,12 @@ namespace LUMTask.Controllers
         }
 
 
-        // PUT api/<MaterialController>/5
+        /// <summary>
+        /// Edit Material Info
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(string id, [FromBody] MaterialModel model)
         {
@@ -70,7 +90,11 @@ namespace LUMTask.Controllers
             return Ok("Materia updated successfully.");
         }
 
-        // DELETE api/<MaterialController>/5
+        /// <summary>
+        /// Delete Material by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(string id)
         {
