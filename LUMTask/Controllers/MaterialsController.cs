@@ -35,11 +35,11 @@ namespace LUMTask.Controllers
         [HttpGet("{id}")]
         public MaterialModel GetById(string id)
         {
-            return _materialRepository.Get($"MaterialModels/{id}");
+            return _materialRepository.Get(id);
         }
 
         [HttpGet()]
-        public MaterialModel GetByName(string name)
+        public IEnumerable< MaterialModel> GetByName(string name)
         {
             return _materialRepository.GetByName(name);
         }
@@ -60,8 +60,11 @@ namespace LUMTask.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(string id, [FromBody] MaterialModel model)
         {
+            var entity = _materialRepository.Get(id);
+            if (entity == null)
+                return NotFound();
 
-            _materialRepository.Update($"MaterialModels/{id}", model);
+            _materialRepository.Update(id, model);
             _materialRepository.Complete();
 
             return Ok("Materia updated successfully.");
@@ -69,13 +72,14 @@ namespace LUMTask.Controllers
 
         // DELETE api/<MaterialController>/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public IActionResult Delete(string id)
         {
-            var entity = _materialRepository.Get($"MaterialModels/{id}");
+            var entity = _materialRepository.Get(id);
             if (entity == null)
-                throw new Exception("Material Not Found");
+                return NotFound() ;
             _materialRepository.Remove(entity);
             _materialRepository.Complete();
+            return Ok("Material deleted successfully.");
         }
 
         

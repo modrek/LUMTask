@@ -9,7 +9,22 @@ namespace LUMTask.Domain.Model
 {
     public class MaterialModel
     {
-        
+        string _Id;
+        public string Id
+        {
+            get
+            {//for prevent auto generte by RavenDB
+                if (string.IsNullOrEmpty(_Id))
+                    return Guid.NewGuid().ToString();
+                else
+                    return _Id;
+            }
+
+            set
+            {
+                _Id = value;
+            }
+        }
         public string MaterialName { get; set; }
 
         public string Author { get; set; }

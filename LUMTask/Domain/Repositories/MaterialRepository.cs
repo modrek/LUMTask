@@ -20,10 +20,10 @@ namespace LUMTask.Domain.Repositories
         }
 
         // special method for Material
-        public MaterialModel GetByName(string materialName)
+        public IEnumerable< MaterialModel> GetByName(string materialName)
         {            
             materialName = $"*{materialName}*";
-            return _session.GetSession().Query<MaterialModel>().Search(x => x.MaterialName, materialName).FirstOrDefault();
+            return _session.GetSession().Query<MaterialModel>().Search(x => x.MaterialName, materialName).ToList();
         }
 
        
