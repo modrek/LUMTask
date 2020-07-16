@@ -15,8 +15,9 @@ namespace LUMTaskTest.Controller
 {
     public class MaterialControllerTest : RavenTestDriver
     {
-        //This allows us to modify the conventions of the store we get from 'GetDocumentStore'
-
+        /// <summary>
+        /// sample 
+        /// </summary>
 
         [Fact]
         public void PostTest()
@@ -30,7 +31,6 @@ namespace LUMTaskTest.Controller
 
             MaterialModel materialModel = new MaterialModel
             {
-
                 MaterialName = "Test ",
                 Author = "modrek",
                 Visible = true,
@@ -50,7 +50,7 @@ namespace LUMTaskTest.Controller
             materialController.Post(materialModel);
 
             var result = materialController.GetByName("Test");
-            Assert.Equal(materialModel.MaterialName, result.MaterialName);
+            Assert.Equal(materialModel.MaterialName, result.FirstOrDefault().MaterialName);
 
 
         }
