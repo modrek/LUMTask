@@ -13,6 +13,8 @@ namespace LUMTask
     {
         public static void Main(string[] args)
         {
+            var filename = "test";
+            Console.Write(filename);
             CreateHostBuilder(args).Build().Run();
         }
 
